@@ -1,0 +1,24 @@
+#background{
+    position: fixed;/*posição fixa na tela*/
+    inset: 0;/*pegar todos os lados da tela*/
+    z-index: -1;/*jogar video para tras no eixo y*/
+    width: 100%;/*largura 100% total*/
+    height: 100vh;/*Altura 100% total*/
+}
+
+#background video{/*configuração do video*/
+    width: 100%;/*video ocupando 100% de largura*/ 
+    height: 100%;/*video ocupando 100% de altura*/ 
+
+    object-fit: cover;/*corte certo do video para ocupar a página inteira*/
+}
+
+#background::after{/*filho do video- configuração a mais*/
+    content: '';
+
+    width: inherit;/*mesma largura do pai*/
+    height: inherit;/*mesma altura do pai*/
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);/*Deixar o video mais escuro*/
+}

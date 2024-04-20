@@ -1,0 +1,79 @@
+header{
+    display: flex;
+    align-items: center;
+    column-gap: 64px;/*afastamento dos itens*/
+
+    width: 100%;
+    max-width: 1440px;
+    padding-top: 24px;/*espaçamento ao topo*/
+}
+
+header img{/*configurando o logo*/
+    width: 70px;
+    height: auto;/*altura automática*/
+}
+
+.navigation{/*configurando a barra de navegação*/
+    display: flex;
+    align-items: center;
+    column-gap: 48px;
+
+    list-style: none;/*deixar bolinhas da lista escondidas*/
+}
+
+.navigation_link{
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;/*espaço ao lado*/
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+.navigation_link:hover{
+    color: var(--red);
+}
+
+.navigation_link::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+
+    width: 60%;
+    height: 1px;
+    background: var(--red);/*traço feito em baixo*/
+
+    transform: scaleX(0);/*linha está no zero*/
+    transform-origin: right;/*começa a crescer*/
+    transition: transform 0.4s;/*tempo para crescer*/
+}
+
+.navigation_link:hover::after{
+    transform: scaleX(1);/*linha aparece quano ocorrer um hover*/
+    transform-origin: left;/*termina a crescer*/
+    transition: transform 0.4s;
+}
+
+.navigation_social{
+    margin-left: auto;/*mandar os itens para a direira*/
+
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.navigation_social svg{
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;/*opacidade quando passar por cima*/
+
+    transition: all 0.4s;
+}
+
+.navigation_social svg:hover{/*flutuando item*/
+    opacity: 1;
+    transform: translateY(-5px);/*item flutuando um pouco a cima*/
+    cursor: pointer;/*mudar cursor*/
+}
